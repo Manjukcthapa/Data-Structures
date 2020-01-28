@@ -83,15 +83,15 @@ class DoublyLinkedList:
     as the new tail of the list. Don't forget to handle 
     the old tail node's next pointer accordingly."""
     def add_to_tail(self, value):
-        new_node = ListNode(value, None, None)
+        pass
+        if self.tail: #if tail exists
+            newNode = ListNode(value, self.tail)
+            self.tail.next = newNode
+            self.tail = newNode
+        else: #Tail doesn't exist means head doesn't exist either
+            self.tail = ListNode(value)
+            self.head = self.tail
         self.length += 1
-        if not self.head and not self.tail:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            new_node.prev = self.tail
-            self.tail.next = new_node
-            self.tail = new_node
     
 
        
