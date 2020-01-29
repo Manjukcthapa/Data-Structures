@@ -2,6 +2,7 @@
 as well as its next node in the List."""
 
 
+
 class ListNode:
     def __init__(self, value, prev=None, next=None):
         self.value = value
@@ -131,21 +132,31 @@ class DoublyLinkedList:
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
     def delete(self, node):
-         self.length -= 1
-         if node is self.head and node is self.tail:
-          self.head = None
-          self.tail = None
-         elif node is self.head:
-          self.head = node.next
-          node.delete()
-         elif node is self.tail:
-          self.tail = node.prev
-          node.delete()
-         else:
-          node.delete()
-        
+          # if empty
+        if not self.head and not self.tail:
+            # TODO: Error
+            return
+        # if head and tail
+        if self.head == self.tail and self.head == node:
+            self.head = None
+            self.tail = None
+        # if head
+        elif self.head == node:
+            self.head = self.head.next
+            node.delete()
+        # if tail
+        elif self.tail == node:
+            self.tail = self.tail.prev
+            node.delete()
+        # otherwise
+        else:
+            node.delete()
+
+        self.length -= 1
+
     """Returns the highest value currently in the list"""
     def get_max(self):
+          # Check if no current node
           if not self.head:
             return None
           current_node = self.head

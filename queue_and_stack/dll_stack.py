@@ -22,4 +22,5 @@ class Stack:
             return None    
 
     def len(self):
+        # get the length  of the list
         return self.size

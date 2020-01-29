@@ -7,6 +7,7 @@ class Queue:
     def __init__(self):
         self.size = 0
         # Why is our DLL a good choice to store our elements?
+        # It's set up for ease of use to push or pop in FIFO and LIFO
         self.storage = DoublyLinkedList()
 
     def enqueue(self, value):
@@ -16,7 +17,7 @@ class Queue:
         self.size += 1
 
     def dequeue(self):
-        #deleting item from tail
+        #deleting item to the tail
         if self.size >0:
             self.size -= 1
             return self.storage.remove_from_tail()
