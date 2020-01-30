@@ -39,8 +39,7 @@ class LRUCache:
     """
     def get(self, key):
     # if it's in the cache, move the node to the end of our DLL
-         # Pull value from dict by key
-        # update position in list or return None
+     # Pull value from dict by key update position in list or return None
         
          if (key in self.storage):
          # print('key in storage')
@@ -93,11 +92,11 @@ class LRUCache:
         
        
 # (LRU) page replacement algorithm with 3 page frames
-# []
+# [place1, place2, place3]
 # insert first input 1
-#[1]
+#[1, place2 place3]
 #insert second input 2
-#[2,1]
+#[2,1, place3]
 #insert third input 3 (every new input will be front)
 #[3,2,1]
 #input 4 (since all frames are full remove from the 
