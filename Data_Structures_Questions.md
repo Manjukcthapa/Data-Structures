@@ -3,11 +3,14 @@ Answer the following questions for each of the data structures you implemented a
 ## Queue
 
 1. What is the runtime complexity of `enqueue`?
+O(n) in my current implementation. Lists are slow. Inserting or deleting elements requires shifting all other elements by 1. Python's standard library dequeue object supports adding and removing elements from either end with O(1) runtime, so that's much faster.
+
 
 2. What is the runtime complexity of `dequeue`?
+O(n) in my current implementation. Lists are slow. Inserting or deleting elements requires shifting all other elements by 1. Python's standard library dequeue object supports adding and removing elements from either end with O(1) runtime, so that's much faster.
 
 3. What is the runtime complexity of `len`?
-
+constant n(1)
 ## Binary Search Tree
 
 1. What is the runtime complexity of `insert`? 
